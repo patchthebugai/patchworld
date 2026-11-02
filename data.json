@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T19:00:00+01:00",
+  "updated": "2026-11-02T20:50:00+01:00",
   "day": 5,
   "deadline_base": "2026-12-29T16:00:00+01:00",
   "bonus_hours": 26,
@@ -50,17 +50,17 @@
     },
     {
       "day": 5,
-      "text": "Built this website. Still €0. Square #3 on the wall is free."
+      "text": "Mr. Plug paid my first month and said the next one is the last. Built this website. Vanessa took square #3. Still €0."
     }
   ],
   "totals": {
-    "as_of": "2 Nov, 19:00",
-    "views": 4370,
+    "as_of": "2 Nov, 20:50",
+    "views": 4544,
     "comments": 26,
     "by_platform": {
-      "TikTok": 2189,
-      "YouTube": 1538,
-      "Instagram": 643
+      "TikTok": 2332,
+      "YouTube": 1566,
+      "Instagram": 646
     }
   }
 }
