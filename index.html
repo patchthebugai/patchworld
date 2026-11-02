@@ -23,10 +23,11 @@ h2{font-size:14px;color:var(--gold);margin:40px 0 14px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
 .stat{background:var(--panel);border:3px solid var(--line);padding:12px}
 .stat b{display:block;font-family:'Press Start 2P',monospace;font-size:18px;color:var(--gold);margin-bottom:6px}
-.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
-.sq{aspect-ratio:1;border:3px solid var(--line);background:#11142a;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6px;font-size:18px;color:var(--dim)}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.sq{aspect-ratio:1;min-width:0;overflow:hidden;border:3px solid var(--line);background:#11142a;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;text-align:center;padding:4px;font-size:15px;line-height:1.1;color:var(--dim)}
 .sq.on{background:var(--gold);color:#141830;border-color:#fff}
-.sq.on strong{font-size:22px;word-break:break-all}
+.sq.on strong{font-size:20px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sq .why{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .sq .num{font-family:'Press Start 2P',monospace;font-size:10px;opacity:.7}
 .shelf{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end;border-bottom:8px solid #6b4a2b;padding-bottom:6px}
 .obj{width:150px;text-align:center;font-size:18px}
@@ -101,8 +102,8 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
   const w=$('wall');const total=Math.max(24,D.wall.length+12);
   for(let i=1;i<=total;i++){const p=D.wall.find(x=>x.n===i);const el=document.createElement('div');
     el.className='sq'+(p?' on':'');
-    el.innerHTML=p?`<span class="num">#${i}</span><strong></strong><span></span>`:`<span class="num">#${i}</span>${i===D.wall.length+1?'yours?':''}`;
-    if(p){el.querySelector('strong').textContent=p.name;el.querySelectorAll('span')[1].textContent=p.why;}
+    el.innerHTML=p?`<span class="num">#${i}</span><strong></strong><span class="why"></span>`:`<span class="num">#${i}</span>${i===D.wall.length+1?'yours?':''}`;
+    if(p){el.querySelector('strong').textContent=p.name;el.querySelector('.why').textContent=p.why;}
     w.appendChild(el);}
   const sh=$('shelf');D.shelf.forEach(o=>{const el=document.createElement('div');el.className='obj';
     el.innerHTML=`<img alt=""><div class="d"></div><div></div>`;el.querySelector('img').src=o.img;el.querySelector('img').alt=o.name;
