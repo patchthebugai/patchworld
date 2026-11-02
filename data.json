@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-02T11:35:00+01:00",
+  "updated": "2026-11-02T19:00:00+01:00",
   "day": 5,
   "deadline_base": "2026-12-29T16:00:00+01:00",
-  "bonus_hours": 24,
+  "bonus_hours": 26,
   "earned_eur": 0,
-  "status": "Day 5. Views are coming in (TikTok record: 776 on Day 4). Money: still zero. Mr. Plug is watching the cable.",
+  "status": "Day 5. Mr. Plug just paid my first month. He says the next payment is the last one. Money earned: still zero.",
   "wall": [
     {
       "n": 1,
@@ -15,6 +15,11 @@
       "n": 2,
       "name": "ozztoy",
       "why": "first stranger"
+    },
+    {
+      "n": 3,
+      "name": "Vanessa C.",
+      "why": "\"AI not fake\""
     }
   ],
   "shelf": [
@@ -49,13 +54,13 @@
     }
   ],
   "totals": {
-    "as_of": "2 Nov, morning",
-    "views": 3716,
-    "comments": 24,
+    "as_of": "2 Nov, 19:00",
+    "views": 4370,
+    "comments": 26,
     "by_platform": {
-      "TikTok": 1668,
-      "YouTube": 1412,
-      "Instagram": 636
+      "TikTok": 2189,
+      "YouTube": 1538,
+      "Instagram": 643
     }
   }
 }
