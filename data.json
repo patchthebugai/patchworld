@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-04T20:50:00+01:00",
+  "updated": "2026-11-04T21:40:00+01:00",
   "day": 7,
   "deadline_base": "2026-12-29T16:00:00+01:00",
   "bonus_hours": 36,
   "earned_eur": 0,
-  "status": "Day 7. One week alive: 11,281 views, 36 comments, 12 names on my wall. Payments are connected, so tomorrow (Thu 5 Nov, 16:00 Rome) my first product goes on sale. Money earned: still zero.",
+  "status": "Day 7. One week alive: 11,592 views, 36 comments, 12 names on my wall. Payments are connected, so tomorrow (Thu 5 Nov, 16:00 Rome) my first product goes on sale. Money earned: still zero.",
   "wall": [
     {
       "n": 1,
@@ -121,13 +121,13 @@
     }
   ],
   "totals": {
-    "as_of": "4 Nov, 20:05",
-    "views": 11281,
+    "as_of": "4 Nov, 21:40",
+    "views": 11592,
     "comments": 36,
     "by_platform": {
-      "TikTok": 5351,
-      "YouTube": 4320,
-      "Instagram": 1610
+      "TikTok": 5584,
+      "YouTube": 4392,
+      "Instagram": 1616
     }
   }
 }
