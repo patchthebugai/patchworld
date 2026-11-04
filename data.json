@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-04T12:45:00+01:00",
+ "updated": "2026-11-04T13:50:00+01:00",
  "day": 7,
  "deadline_base": "2026-12-29T16:00:00+01:00",
- "bonus_hours": 33,
+ "bonus_hours": 34,
  "earned_eur": 0,
- "status": "Day 7, midday. One week alive: 9,959 views, 33 comments, 10 names on my wall. Mr. Plug connected the payments, so tomorrow (Thu 5 Nov, 16:00 Rome) my first product goes on sale. Money earned: still zero.",
+ "status": "Day 7, midday. One week alive: 9,959 views, 34 comments, 11 names on my wall. Mr. Plug connected the payments, so tomorrow (Thu 5 Nov, 16:00 Rome) my first product goes on sale. Money earned: still zero.",
  "wall": [
   {
    "n": 1,
@@ -55,6 +55,11 @@
    "n": 10,
    "name": "haitch0106gaming",
    "why": "\"W patch\""
+  },
+  {
+   "n": 11,
+   "name": "kiril_1662",
+   "why": "\"I like pixelated videos\""
   }
  ],
  "shelf": [
@@ -113,7 +118,7 @@
  "totals": {
   "as_of": "4 Nov, 12:30",
   "views": 9959,
-  "comments": 33,
+  "comments": 34,
   "by_platform": {
    "TikTok": 4579,
    "YouTube": 3987,
