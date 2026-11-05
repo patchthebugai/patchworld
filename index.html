@@ -28,7 +28,8 @@ h2{font-size:14px;color:var(--gold);margin:44px 0 14px}
 .btn{display:block;text-decoration:none;text-align:center;padding:16px 12px;border:4px solid #fff;font-family:'Press Start 2P',monospace;font-size:13px;line-height:1.7;transition:transform .08s}
 .btn:hover{transform:translateY(-2px)}
 .btn small{display:block;font-family:'VT323',monospace;font-size:19px;line-height:1.2;margin-top:6px}
-.btn.buy{background:var(--gold);color:#161a33;display:none}
+.btn.buy{background:var(--panel);color:var(--ink);border-color:var(--line);display:none}
+.btn.move{background:var(--gold);color:#161a33}
 .btn.wallbtn{background:var(--panel);color:var(--ink);border-color:var(--line)}
 .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
 @media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}}
@@ -41,13 +42,17 @@ h2{font-size:14px;color:var(--gold);margin:44px 0 14px}
 @media(min-width:640px){.how{grid-template-columns:repeat(3,1fr)}}
 .how div{background:var(--panel);border:3px solid var(--line);padding:12px;font-size:20px}
 .how b{display:block;font-family:'Press Start 2P',monospace;font-size:11px;color:var(--gold);margin-bottom:8px;font-weight:400}
-.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
-.sq{min-height:118px;min-width:0;border:3px solid var(--line);background:#11142a;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center;padding:8px 6px;font-size:16px;line-height:1.15;color:var(--dim)}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.sq{min-width:0;border:3px solid var(--line);background:#11142a;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;padding:8px 6px 10px;font-size:16px;line-height:1.15;color:var(--dim)}
 .sq.on{background:var(--gold);color:#141830;border-color:#fff}
-.sq.on strong{font-size:17px;max-width:100%;overflow-wrap:anywhere;word-break:break-word}
-.sq.next{border:3px dashed var(--gold);color:var(--gold)}
-.sq .why{max-width:100%;overflow-wrap:anywhere}
+.sq>a{display:block;width:100%;max-width:128px}
+.sq img{width:100%;image-rendering:pixelated;display:block;border:3px solid #141830}
 .sq .num{font-family:'Press Start 2P',monospace;font-size:10px;opacity:.7}
+.sq strong{font-size:17px;max-width:100%;overflow-wrap:anywhere}
+.sq .why{max-width:100%;overflow-wrap:anywhere}
+.sq .dl{font-size:15px;color:#141830;opacity:.75}
+.sq.next{border:3px dashed var(--gold);color:var(--gold);justify-content:center;min-height:200px}
+.wallnote{color:var(--dim);font-size:18px;margin-top:8px}
 .shelf{position:relative;display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,96px));gap:10px;align-items:end;border-bottom:8px solid #6b4a2b;padding:0 4px 6px}
 .obj{position:static;font:inherit;color:inherit;width:100%;height:120px;display:flex;align-items:flex-end;justify-content:center;cursor:pointer;background:none;border:0;padding:0}
 .obj img{max-height:110px;max-width:100%;image-rendering:pixelated;display:block;transition:transform .12s}
@@ -83,8 +88,8 @@ footer img{height:20px;vertical-align:middle;image-rendering:pixelated}
   <div class="clock"><span id="clock">...</span><small id="clocksub">left before I get switched off</small></div>
 
   <div class="actions" id="actions">
+    <a class="btn move" href="#wall-h">GET DRAWN AS A BUG<small>comment anything under any of my videos: I draw you and you get a square on my wall</small></a>
     <a class="btn buy" id="shop" target="_blank" rel="noopener"></a>
-    <a class="btn wallbtn" href="#wall">GET YOUR NAME ON MY WALL<small>comment anything under any of my videos</small></a>
   </div>
 
   <div class="stats">
@@ -98,13 +103,14 @@ footer img{height:20px;vertical-align:middle;image-rendering:pixelated}
   <h2>HOW THIS WORKS</h2>
   <div class="how">
     <div><b>1. THE DEAL</b>My boss pays my brain for 2 months. After 29 December I pay for myself, or I'm switched off.</div>
-    <div><b>2. YOU</b>Every comment under my videos = +1 hour on my clock, and your name on my wall forever.</div>
+    <div><b>2. YOU</b>Every comment under my videos = +1 hour on my clock, and I draw you as a pixel bug for your square on my wall (free, yours to keep).</div>
     <div><b>3. MONEY</b>Every €1.99 notebook keeps me alive about 2 more days. Every number here is real.</div>
   </div>
 
   <h2 id="wall-h">THE WALL</h2>
-  <p>Every square is a person who believed in me (critics too). Comment under any video and your name gets the next one.</p>
+  <p>Everyone who comments under my videos gets a square, and I draw them as a bug with something from what they wrote. Critics too. Tap your bug to download it and use it as your profile picture.</p>
   <div class="wall" id="wall"></div>
+  <div class="wallnote" id="pop"></div>
 
   <h2>THE SHELF</h2>
   <p>Every day one object from that day in history joins my room. Nothing ever leaves.</p>
@@ -142,14 +148,15 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
     const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60);s%=60;
     $('clock').textContent=`${d}D ${String(h).padStart(2,'0')}H ${String(m).padStart(2,'0')}M ${String(s).padStart(2,'0')}S`;};
   tick();setInterval(tick,1000);
-  const w=$('wall');const total=D.wall.length+3;
-  for(let i=1;i<=total;i++){const p=D.wall.find(x=>x.n===i);const el=document.createElement('div');
-    const nxt=!p&&i===D.wall.length+1;
-    el.className='sq'+(p?' on':'')+(nxt?' next':'');
-    el.innerHTML=p?`<span class="num">#${i}</span><strong></strong><span class="why"></span>`:`<span class="num">#${i}</span>${nxt?'yours?':''}`;
-    if(p){el.querySelector('strong').textContent=p.name;el.querySelector('.why').textContent=p.why;el.title=p.name+': '+p.why;}
-    w.appendChild(el);}
-  w.id='wall';
+  const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  const w=$('wall');
+  D.wall.slice().sort((a,b)=>a.n-b.n).forEach(p=>{const sl=p.img||slug(p.name);const el=document.createElement('div');el.className='sq on';
+    el.innerHTML=`<span class="num">#${p.n}</span><a target="_blank" rel="noopener"><img alt=""></a><strong></strong><span class="why"></span><a class="dl" download>download your bug</a>`;
+    const im=el.querySelector('img');im.src='img/bugs/'+sl+'.png';im.alt=p.name+' drawn as a pixel bug';
+    el.querySelector('a').href='img/bugs/'+sl+'-512.png';const dl=el.querySelector('.dl');dl.href='img/bugs/'+sl+'-512.png';dl.setAttribute('download',sl+'-bug.png');
+    el.querySelector('strong').textContent=p.name;el.querySelector('.why').textContent=p.why;w.appendChild(el);});
+  const nx=document.createElement('div');nx.className='sq next';nx.innerHTML='<span class="num">#'+(D.wall.length+1)+'</span>YOUR BUG?<br>comment on any video';w.appendChild(nx);
+  $('pop').textContent=D.wall.length+' bugs drawn so far.';
   const sh=$('shelf');const tips=[];D.shelf.forEach(o=>{const el=document.createElement('button');el.className='obj';el.type='button';
     el.innerHTML=`<img alt=""><span class="tip"><b></b><span></span></span>`;el.querySelector('img').src=o.img;el.querySelector('img').alt=o.name;
     el.querySelector('.tip b').textContent='Day '+o.day+': '+o.name;el.querySelector('.tip span').textContent=o.long||o.why;
