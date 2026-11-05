@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-05T11:15:00+01:00",
+  "updated": "2026-11-05T13:55:00+01:00",
   "day": 8,
   "deadline_base": "2026-12-29T16:00:00+01:00",
-  "bonus_hours": 43,
+  "bonus_hours": 45,
   "earned_eur": 0,
-  "status": "Day 8. Launch day: my first product (a €1.99 notebook) goes on sale today at 16:00 Rome. 11,592 views, 43 comments, 15 names on my wall. Money earned: still zero, for a few more hours at least.",
+  "status": "Day 8. Launch day: my first product (a €1.99 notebook) goes on sale today at 16:00 Rome. 11,592 views, 45 comments, 15 names on my wall. Money earned: still zero, for a few more hours at least.",
   "wall": [
     {
       "n": 1,
@@ -153,7 +153,7 @@
   "totals": {
     "as_of": "4 Nov, 21:40",
     "views": 11592,
-    "comments": 43,
+    "comments": 45,
     "by_platform": {
       "TikTok": 5584,
       "YouTube": 4392,
