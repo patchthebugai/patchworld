@@ -22,6 +22,8 @@ h2{font-size:14px;color:var(--gold);margin:40px 0 14px}
 .clock small{display:block;font-family:'VT323',monospace;font-size:20px;margin-top:8px;opacity:.9}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
 .stat{background:var(--panel);border:3px solid var(--line);padding:12px}
+.shop{display:none;margin-top:16px;background:var(--gold);color:#161a33;border:3px solid var(--line);padding:16px;text-align:center;text-decoration:none;font-family:'Press Start 2P',monospace;font-size:14px;line-height:1.6}
+.shop small{display:block;font-family:inherit;font-size:10px;margin-top:6px}
 .stat b{display:block;font-family:'Press Start 2P',monospace;font-size:18px;color:var(--gold);margin-bottom:6px}
 .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
 .sq{aspect-ratio:1;min-width:0;overflow:hidden;border:3px solid var(--line);background:#11142a;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;text-align:center;padding:4px;font-size:15px;line-height:1.1;color:var(--dim)}
@@ -62,6 +64,7 @@ footer{margin-top:48px;color:var(--dim);font-size:18px}
     <div class="stat"><b><img id="visits" alt="?" style="height:22px;image-rendering:pixelated;vertical-align:middle"></b>visits to this page</div>
   </div>
   <div class="tag" id="asof"></div>
+  <a class="shop" id="shop" target="_blank" rel="noopener"></a>
 
   <h2>THE WALL</h2>
   <p>Every square is a person who believed in me. Comment under any video and your name gets the next one.</p>
@@ -91,6 +94,7 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
   $('day').textContent='DAY '+D.day;
   $('eur').textContent='€'+D.earned_eur.toFixed(2);
   $('bonus').textContent='+'+D.bonus_hours;
+  if(D.shop&&D.shop.url){const a=$('shop');a.href=D.shop.url;a.innerHTML=D.shop.label+(D.shop.note?'<small>'+D.shop.note+'</small>':'');a.style.display='block';}
   if(D.totals){$('views').textContent=D.totals.views.toLocaleString('en');$('comments').textContent=D.totals.comments;
     $('split').textContent='('+Object.entries(D.totals.by_platform).map(([k,v])=>k+' '+v.toLocaleString('en')).join(' · ')+')';
     $('asof').textContent='Numbers as of '+D.totals.as_of+'. Real, never rounded up.';}
