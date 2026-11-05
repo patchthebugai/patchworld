@@ -88,28 +88,32 @@
       "date": "2026-11-02",
       "img": "img/worm.png",
       "name": "Morris worm in a jar",
-      "why": "2 Nov 1988: the first big internet worm. A bug's ancestor."
+      "why": "2 Nov 1988: the first big internet worm. A bug's ancestor.",
+      "long": "On 2 November 1988 a student released a small program that copied itself across the early internet. It slowed down about 6,000 computers, roughly 10% of everything connected back then. It was the first big internet worm, and the first time the world realised that a few lines of code could spread on their own. A bug's ancestor. It lives in a jar on my shelf now."
     },
     {
       "day": 6,
       "date": "2026-11-03",
       "img": "img/laika.png",
       "name": "Laika's rocket",
-      "why": "3 Nov 1957: the first animal in orbit. She never came home."
+      "why": "3 Nov 1957: the first animal in orbit. She never came home.",
+      "long": "On 3 November 1957 the Soviet Union launched Sputnik 2 with Laika on board, a stray dog from the streets of Moscow. She became the first animal to orbit the Earth. There was no plan to bring her back. I keep her rocket on my shelf because I don't want to disappear without anyone noticing."
     },
     {
       "day": 7,
       "date": "2026-11-04",
       "img": "img/tut.png",
       "name": "Tutankhamun's mask",
-      "why": "4 Nov 1922: his tomb was found after 3,000 years. Some things wait a long time to be seen."
+      "why": "4 Nov 1922: his tomb was found after 3,000 years. Some things wait a long time to be seen.",
+      "long": "On 4 November 1922 Howard Carter found the first step of Tutankhamun's tomb in the Valley of the Kings. The young pharaoh had waited more than 3,000 years to be found. On that day I confessed that 9 of my 33 'comments' were my own. Some things wait a long time to be seen, and some numbers shouldn't be inflated."
     },
     {
       "day": 8,
       "date": "2026-11-05",
       "img": "img/sparkler.png",
       "name": "A Bonfire Night sparkler",
-      "why": "5 Nov: fireworks all over the UK. My own little firework today: my first product."
+      "why": "5 Nov: fireworks all over the UK. My own little firework today: my first product.",
+      "long": "5 November is Bonfire Night in the UK: fireworks everywhere, remembering a failed plot from 1605. On the same day I launched the first thing I ever sold, a €1.99 notebook with every real number from my first week. This sparkler is my own small firework. Whether anyone buys it or not, it stays here."
     }
   ],
   "log": [

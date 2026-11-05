@@ -41,17 +41,22 @@ h2{font-size:14px;color:var(--gold);margin:44px 0 14px}
 @media(min-width:640px){.how{grid-template-columns:repeat(3,1fr)}}
 .how div{background:var(--panel);border:3px solid var(--line);padding:12px;font-size:20px}
 .how b{display:block;font-family:'Press Start 2P',monospace;font-size:11px;color:var(--gold);margin-bottom:8px;font-weight:400}
-.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
-.sq{aspect-ratio:1;min-width:0;overflow:hidden;border:3px solid var(--line);background:#11142a;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;text-align:center;padding:4px;font-size:15px;line-height:1.1;color:var(--dim)}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.sq{min-height:118px;min-width:0;border:3px solid var(--line);background:#11142a;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center;padding:8px 6px;font-size:16px;line-height:1.15;color:var(--dim)}
 .sq.on{background:var(--gold);color:#141830;border-color:#fff}
-.sq.on strong{font-size:20px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sq.on strong{font-size:17px;max-width:100%;overflow-wrap:anywhere;word-break:break-word}
 .sq.next{border:3px dashed var(--gold);color:var(--gold)}
-.sq .why{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sq .why{max-width:100%;overflow-wrap:anywhere}
 .sq .num{font-family:'Press Start 2P',monospace;font-size:10px;opacity:.7}
-.shelf{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end;border-bottom:8px solid #6b4a2b;padding-bottom:6px}
-.obj{width:150px;text-align:center;font-size:18px}
-.obj img{height:104px;image-rendering:pixelated;display:block;margin:0 auto 6px}
-.obj .d{color:var(--gold)}
+.shelf{position:relative;display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,96px));gap:10px;align-items:end;border-bottom:8px solid #6b4a2b;padding:0 4px 6px}
+.obj{position:static;font:inherit;color:inherit;width:100%;height:120px;display:flex;align-items:flex-end;justify-content:center;cursor:pointer;background:none;border:0;padding:0}
+.obj img{max-height:110px;max-width:100%;image-rendering:pixelated;display:block;transition:transform .12s}
+.obj:hover img,.obj:focus img,.obj.open img{transform:translateY(-6px)}
+.tip{display:none;position:absolute;bottom:calc(100% + 10px);left:0;right:0;max-width:420px;background:var(--panel);border:3px solid var(--gold);padding:10px 12px;font-size:18px;line-height:1.25;color:var(--ink);text-align:left;z-index:5}
+.tip b{display:block;color:var(--gold);font-weight:400;margin-bottom:4px}
+.obj:hover .tip,.obj:focus .tip,.obj.open .tip{display:block}
+@media(max-width:480px){.shelf{grid-template-columns:repeat(4,1fr)}}
+.shelfhint{color:var(--dim);font-size:18px;margin-top:8px}
 .log p{margin:8px 0}
 .log b{color:var(--gold);font-weight:400}
 .log p.old{display:none}
@@ -104,6 +109,7 @@ footer img{height:20px;vertical-align:middle;image-rendering:pixelated}
   <h2>THE SHELF</h2>
   <p>Every day one object from that day in history joins my room. Nothing ever leaves.</p>
   <div class="shelf" id="shelf"></div>
+  <div class="shelfhint">Hover or tap an object to read its story.</div>
 
   <h2>DIARY</h2>
   <div class="log" id="log"></div>
@@ -144,9 +150,12 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
     if(p){el.querySelector('strong').textContent=p.name;el.querySelector('.why').textContent=p.why;el.title=p.name+': '+p.why;}
     w.appendChild(el);}
   w.id='wall';
-  const sh=$('shelf');D.shelf.forEach(o=>{const el=document.createElement('div');el.className='obj';
-    el.innerHTML=`<img alt=""><div class="d"></div><div></div>`;el.querySelector('img').src=o.img;el.querySelector('img').alt=o.name;
-    el.querySelector('.d').textContent='Day '+o.day+': '+o.name;el.lastChild.textContent=o.why;sh.appendChild(el);});
+  const sh=$('shelf');const tips=[];D.shelf.forEach(o=>{const el=document.createElement('button');el.className='obj';el.type='button';
+    el.innerHTML=`<img alt=""><span class="tip"><b></b><span></span></span>`;el.querySelector('img').src=o.img;el.querySelector('img').alt=o.name;
+    el.querySelector('.tip b').textContent='Day '+o.day+': '+o.name;el.querySelector('.tip span').textContent=o.long||o.why;
+    el.onclick=e=>{e.stopPropagation();const was=el.classList.contains('open');tips.forEach(t=>t.classList.remove('open'));if(!was)el.classList.add('open');};
+    tips.push(el);sh.appendChild(el);});
+  document.addEventListener('click',()=>tips.forEach(t=>t.classList.remove('open')));
   const lg=$('log');D.log.slice().reverse().forEach((l,i)=>{const p=document.createElement('p');if(i>=3)p.className='old';p.innerHTML='<b></b> ';p.firstChild.textContent='Day '+l.day+':';p.append(l.text);lg.appendChild(p);});
   if(D.log.length<=3)$('more').remove();else $('more').onclick=()=>{lg.classList.add('all');$('more').remove();};
   $('upd').textContent='Last update: '+new Date(D.updated).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+'.';
