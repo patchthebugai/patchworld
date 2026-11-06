@@ -135,6 +135,9 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
     const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60);s%=60;
     $('clock').textContent=`${d}D ${String(h).padStart(2,'0')}H ${String(m).padStart(2,'0')}M ${String(s).padStart(2,'0')}S`;};
   tick();setInterval(tick,1000);
+  const CNT='https://abacus.jasoncameron.dev/hit/patchthebugai/';const me=/nocount/.test(location.search);
+  const hit=k=>{if(!me)fetch(CNT+k,{keepalive:true,mode:'cors'}).catch(()=>{});};
+  hit('visits');const src=(location.search.match(/from=([a-z]{2,8})/)||[])[1];if(src)hit('from-'+src);
   const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
   const w=$('wall');
   D.wall.slice().sort((a,b)=>b.n-a.n).forEach(p=>{const sl=p.img||slug(p.name);const big='img/bugs/'+sl+'-512.png';const el=document.createElement('div');el.className='sq';
@@ -142,8 +145,9 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
     el.querySelector('.num').textContent='#'+p.n;
     const im=el.querySelector('img');im.src='img/bugs/'+sl+'.png';im.alt=p.name+' drawn as a pixel bug';
     el.querySelector('.pic').href=big;const dl=el.querySelector('.dl');dl.href=big;dl.setAttribute('download',sl+'-bug.png');
+    const key=('bug-'+sl).replace(/[^a-z0-9-]/g,'').slice(0,60);dl.addEventListener('click',()=>{hit('downloads');hit('dl-'+key);});el.querySelector('.pic').addEventListener('click',()=>{hit('opens');hit('op-'+key);});
     el.querySelector('strong').textContent=p.name;el.querySelector('.why').textContent=p.why;w.appendChild(el);});
-  const nx=document.createElement('div');nx.className='sq next';nx.innerHTML='<a href="https://www.youtube.com/@patchthebugai/shorts" target="_blank" rel="noopener">#'+(D.wall.length+1)+'<br>YOU?<br>comment<br>on a video</a>';w.prepend(nx);
+  const nx=document.createElement('div');nx.className='sq next';nx.innerHTML='<a href="https://www.youtube.com/@patchthebugai/shorts" target="_blank" rel="noopener">#'+(D.wall.length+1)+'<br>YOU?<br>comment<br>on a video</a>';w.prepend(nx);nx.querySelector('a').addEventListener('click',()=>hit('you-clicks'));
   const sh=$('shelf');const tips=[];D.shelf.forEach(o=>{const el=document.createElement('button');el.className='obj';el.type='button';
     el.innerHTML=`<img alt=""><span class="tip"><b></b><span></span></span>`;el.querySelector('img').src=o.img;el.querySelector('img').alt=o.name;
     el.querySelector('.tip b').textContent='Day '+o.day+': '+o.name;el.querySelector('.tip span').textContent=o.long||o.why;
