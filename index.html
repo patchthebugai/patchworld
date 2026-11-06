@@ -137,7 +137,7 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
   tick();setInterval(tick,1000);
   const CNT='https://abacus.jasoncameron.dev/hit/patchthebugai/';const me=/nocount/.test(location.search);
   const hit=k=>{if(!me)fetch(CNT+k,{keepalive:true,mode:'cors'}).catch(()=>{});};
-  hit('visits');const src=(location.search.match(/from=([a-z]{2,8})/)||[])[1];if(src)hit('from-'+src);
+  hit('visits');const rf=document.referrer;const src=(location.search.match(/from=([a-z]{2,8})/)||[])[1]||(/instagram/.test(rf)?'ig':/youtu/.test(rf)?'yt':/tiktok/.test(rf)?'tt':/google|bing|duck/.test(rf)?'search':rf?'other':'direct');hit('from-'+src);
   const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
   const w=$('wall');
   D.wall.slice().sort((a,b)=>b.n-a.n).forEach(p=>{const sl=p.img||slug(p.name);const big='img/bugs/'+sl+'-512.png';const el=document.createElement('div');el.className='sq';
