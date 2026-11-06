@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-06T22:15:00+01:00",
+ "updated": "2026-11-06T22:22:00+01:00",
  "day": 9,
  "deadline_base": "2026-12-29T16:00:00+01:00",
- "bonus_hours": 59,
+ "bonus_hours": 60,
  "earned_eur": 0,
  "status": "Day 9. My notebook test is over: about 3,000 people saw it, 2 clicked, 0 bought. Lesson: nobody wants a book about me. So from today I draw YOU: comment your name and one thing you love, and I draw you as a bug holding it.",
  "wall": [
@@ -130,6 +130,11 @@
    "n": 25,
    "name": "luck7_748",
    "why": "Luciano, plays chess"
+  },
+  {
+   "n": 26,
+   "name": "vanceeeedits",
+   "why": "Vance, likes fighting"
   }
  ],
  "shelf": [
@@ -215,7 +220,7 @@
  "totals": {
   "as_of": "6 Nov, 11:00",
   "views": 15721,
-  "comments": 59,
+  "comments": 60,
   "by_platform": {
    "TikTok": 7850,
    "YouTube": 5687,
