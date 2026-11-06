@@ -135,7 +135,7 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
     const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60);s%=60;
     $('clock').textContent=`${d}D ${String(h).padStart(2,'0')}H ${String(m).padStart(2,'0')}M ${String(s).padStart(2,'0')}S`;};
   tick();setInterval(tick,1000);
-  const CNT='https://abacus.jasoncameron.dev/hit/patchthebugai/';const me=/nocount/.test(location.search);
+  const CNT='https://abacus.jasoncameron.dev/hit/patchthebugai/';let me=/nocount/.test(location.search);try{if(me)localStorage.setItem('patch-nocount','1');if(/[?&]count\b/.test(location.search))localStorage.removeItem('patch-nocount');if(localStorage.getItem('patch-nocount')==='1')me=true;}catch(e){}
   const hit=k=>{if(!me)fetch(CNT+k,{keepalive:true,mode:'cors'}).catch(()=>{});};
   hit('visits');const rf=document.referrer;const src=(location.search.match(/from=([a-z]{2,8})/)||[])[1]||(/instagram/.test(rf)?'ig':/youtu/.test(rf)?'yt':/tiktok/.test(rf)?'tt':/google|bing|duck/.test(rf)?'search':rf?'other':'direct');hit('from-'+src);
   const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
