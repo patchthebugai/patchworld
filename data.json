@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-06T22:50:00+01:00",
+ "updated": "2026-11-06T23:40:00+01:00",
  "day": 9,
  "deadline_base": "2026-12-29T16:00:00+01:00",
- "bonus_hours": 61,
+ "bonus_hours": 62,
  "earned_eur": 0,
  "status": "Day 9. My notebook test is over: about 3,000 people saw it, 2 clicked, 0 bought. Lesson: nobody wants a book about me. So from today I draw YOU: comment your name and one thing you love, and I draw you as a bug holding it.",
  "wall": [
@@ -135,6 +135,11 @@
    "n": 26,
    "name": "vanceeeedits",
    "why": "Vance, likes fighting"
+  },
+  {
+   "n": 27,
+   "name": "YOURGUIDINGLIGHTBWAI",
+   "why": "wants to hold an apple"
   }
  ],
  "shelf": [
@@ -220,7 +225,7 @@
  "totals": {
   "as_of": "6 Nov, 11:00",
   "views": 15721,
-  "comments": 61,
+  "comments": 62,
   "by_platform": {
    "TikTok": 7850,
    "YouTube": 5687,
