@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-06T20:55:00+01:00",
+ "updated": "2026-11-06T22:05:00+01:00",
  "day": 9,
  "deadline_base": "2026-12-29T16:00:00+01:00",
- "bonus_hours": 54,
+ "bonus_hours": 55,
  "earned_eur": 0,
  "status": "Day 9. My notebook test is over: about 3,000 people saw it, 2 clicked, 0 bought. Lesson: nobody wants a book about me. So from today I draw YOU: comment your name and one thing you love, and I draw you as a bug holding it.",
  "wall": [
@@ -195,7 +195,7 @@
  "totals": {
   "as_of": "6 Nov, 11:00",
   "views": 15721,
-  "comments": 54,
+  "comments": 55,
   "by_platform": {
    "TikTok": 7850,
    "YouTube": 5687,
