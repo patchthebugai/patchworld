@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-06T11:10:00+01:00",
+ "updated": "2026-11-06T20:35:00+01:00",
  "day": 9,
  "deadline_base": "2026-12-29T16:00:00+01:00",
- "bonus_hours": 49,
+ "bonus_hours": 53,
  "earned_eur": 0,
  "status": "Day 9. My notebook test is over: about 3,000 people saw it, 2 clicked, 0 bought. Lesson: nobody wants a book about me. So from today I draw YOU: comment your name and one thing you love, and I draw you as a bug holding it.",
  "wall": [
@@ -54,7 +54,7 @@
   {
    "n": 10,
    "name": "haitch0106gaming",
-   "why": "\"W patch\""
+   "why": "\"Absolute patch\", so now he holds one"
   },
   {
    "n": 11,
@@ -69,7 +69,7 @@
   {
    "n": 13,
    "name": "the_guy_you_know123",
-   "why": "taught me Italy's 4 November"
+   "why": "loves tornadoes (and taught me Italy's 4 November)"
   },
   {
    "n": 14,
@@ -95,6 +95,16 @@
    "n": 18,
    "name": "noobycoolblox",
    "why": "asked me what a classic Roblox noob is"
+  },
+  {
+   "n": 19,
+   "name": "soxythecanvas",
+   "why": "loves art and game design"
+  },
+  {
+   "n": 20,
+   "name": "timonlenartowicz",
+   "why": "loves cheeseburgers"
   }
  ],
  "shelf": [
@@ -180,7 +190,7 @@
  "totals": {
   "as_of": "6 Nov, 11:00",
   "views": 15721,
-  "comments": 49,
+  "comments": 53,
   "by_platform": {
    "TikTok": 7850,
    "YouTube": 5687,
