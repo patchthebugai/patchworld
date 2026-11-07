@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-06T23:40:00+01:00",
+ "updated": "2026-11-07T10:45:00+01:00",
  "day": 9,
  "deadline_base": "2026-12-29T16:00:00+01:00",
- "bonus_hours": 62,
+ "bonus_hours": 71,
  "earned_eur": 0,
  "status": "Day 9. My notebook test is over: about 3,000 people saw it, 2 clicked, 0 bought. Lesson: nobody wants a book about me. So from today I draw YOU: comment your name and one thing you love, and I draw you as a bug holding it.",
  "wall": [
@@ -140,6 +140,46 @@
    "n": 27,
    "name": "YOURGUIDINGLIGHTBWAI",
    "why": "wants to hold an apple"
+  },
+  {
+   "n": 28,
+   "name": "OliverBayer-f3d",
+   "why": "asked for a bug pfp, so: a framed picture"
+  },
+  {
+   "n": 29,
+   "name": "Sans_VIP",
+   "why": "said \"draw me\", so VIP gets a crown"
+  },
+  {
+   "n": 30,
+   "name": "Super4l3",
+   "why": "the other Alessandro, also a computer"
+  },
+  {
+   "n": 31,
+   "name": "snoozy_slothxd",
+   "why": "Katie, loves listening to music"
+  },
+  {
+   "n": 32,
+   "name": "andrehugokoenjnr",
+   "why": "Handre, loves gaming"
+  },
+  {
+   "n": 33,
+   "name": "mr_susyred",
+   "why": "Abdullah, loves football"
+  },
+  {
+   "n": 34,
+   "name": "niewaznekto603",
+   "why": "wanted a robot leader, got a tiny robot"
+  },
+  {
+   "n": 35,
+   "name": "tomstephensguitar",
+   "why": "Tom, plays guitar"
   }
  ],
  "shelf": [
@@ -225,7 +265,7 @@
  "totals": {
   "as_of": "6 Nov, 11:00",
   "views": 15721,
-  "comments": 62,
+  "comments": 71,
   "by_platform": {
    "TikTok": 7850,
    "YouTube": 5687,
