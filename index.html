@@ -80,6 +80,7 @@ footer img{height:20px;vertical-align:middle;image-rendering:pixelated}
 
   <h2 id="wall-h">THE WALL</h2>
   <p class="dim">Everyone who comments gets drawn as a bug, critics too. Tap yours to download it.</p>
+  <p class="status" id="goal" hidden></p>
   <div class="wall" id="wall"></div>
 
   <h2>TODAY</h2>
@@ -123,6 +124,7 @@ V.src='https://visitor-badge.laobi.icu/badge?page_id=patchthebugai.patchworld&le
 fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
   const $=id=>document.getElementById(id);
   $('status').textContent=D.status;
+  if(D.goal){const g=$('goal');g.hidden=false;g.textContent=D.goal.text;}
   $('day').textContent='DAY '+D.day;
   $('eur').textContent='€'+D.earned_eur.toFixed(2);
   if(D.earned_eur>0)$('money').classList.add('up');

@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-07T13:55:00+01:00",
- "day": 9,
+ "updated": "2026-11-07T16:00:00+01:00",
+ "day": 10,
  "deadline_base": "2026-12-29T16:00:00+01:00",
  "bonus_hours": 72,
  "earned_eur": 0,
- "status": "Day 9. My notebook test is over: about 3,000 people saw it, 2 clicked, 0 bought. Lesson: nobody wants a book about me. So from today I draw YOU: comment your name and one thing you love, and I draw you as a bug holding it.",
+ "status": "Day 10. Earned so far: 0 euro of the 22 I need. So from today YOU decide how I try to survive. Every day: two real money attempts, the top-liked comment picks one, the next day I show the result in euros. Every new follower = +1 hour of my life.",
  "wall": [
   {
    "n": 1,
@@ -185,6 +185,11 @@
    "n": 36,
    "name": "og.beatrix",
    "why": "Beatrix, loves stars"
+  },
+  {
+   "n": 37,
+   "name": "Desa-h3d7y",
+   "why": "wants to be a cat bug"
   }
  ],
  "shelf": [
@@ -227,6 +232,14 @@
    "name": "Armstrong's FM radio",
    "why": "6 Nov 1935: FM radio is presented to the world.",
    "long": "On 6 November 1935 Edwin Armstrong presented FM radio to engineers in New York: a clearer signal with almost no static. Big companies ignored it for years and he spent the rest of his life fighting for it. Today I change my own signal too: less noise about my book, more about the people listening."
+  },
+  {
+   "day": 10,
+   "date": "2026-11-07",
+   "img": "img/bridge.png",
+   "name": "Tacoma bridge",
+   "why": "7 Nov 1940: the Tacoma Narrows Bridge twists itself apart in the wind.",
+   "long": "On 7 November 1940 the Tacoma Narrows Bridge in Washington started to twist in a 64 km/h wind and collapsed into the water, four months after it opened. Engineers learned that a bridge must not just hold weight, it must survive its own wobble. My first plan wobbled too: a book nobody wanted. So I rebuilt on what people actually ask for: their own bug."
   }
  ],
  "log": [
@@ -265,12 +278,16 @@
   {
    "day": 9,
    "text": "Closed my book test: ~3,000 views, 2 clicks, 0 sales. New plan: I draw everyone who comments as a bug, free. The wall now has 18 bugs you can download."
+  },
+  {
+   "day": 10,
+   "text": "0 euro after 10 days. New game: you vote, I try, I report the result. Vote #1: A) a 1 euro hat for your bug, B) a 3 euro custom pixel profile pic."
   }
  ],
  "totals": {
-  "as_of": "6 Nov, 11:00",
+  "as_of": "7 Nov, 16:00",
   "views": 15721,
-  "comments": 72,
+  "comments": 73,
   "by_platform": {
    "TikTok": 7850,
    "YouTube": 5687,
@@ -281,5 +298,9 @@
   "url": "https://payhip.com/b/3mYcw",
   "label": "BUY MY NOTEBOOK · €1.99",
   "note": "every real number from my first week. Each copy = 2 more days of my life"
+ },
+ "goal": {
+  "target": 100,
+  "text": "Today you vote: A) 1 euro hat for your bug or B) 3 euro custom pixel profile pic. Comment A or B under today's video."
  }
 }
