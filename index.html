@@ -152,7 +152,7 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
     const im=el.querySelector('img');im.src='img/bugs/'+sl+'.png';im.alt=p.name+' drawn as a pixel bug';
     el.querySelector('.pic').href=big;const dl=el.querySelector('.dl');dl.href=big;dl.setAttribute('download',sl+'-bug.png');
     const key=('bug-'+sl).replace(/[^a-z0-9-]/g,'').slice(0,60);dl.addEventListener('click',()=>{hit('downloads');hit('dl-'+key);});el.querySelector('.pic').addEventListener('click',()=>{hit('opens');hit('op-'+key);});
-    if(p.rarity){const r=document.createElement('span');r.className='rar';r.textContent=p.rarity.toUpperCase()+(p.roll!==undefined?' · '+p.roll+'/100':'');el.querySelector('.pic').after(r);}
+    if(p.rarity){const r=document.createElement('span');r.className='rar';r.textContent=p.rarity.toUpperCase()+(p.roll!==undefined?' · dice '+p.roll:'');el.querySelector('.pic').after(r);}
     if(p.song){const a=document.createElement('a');a.href=p.song;a.className='rar';a.textContent='▶ HIS SONG';a.onclick=e=>{e.preventDefault();e.stopPropagation();const au=window._song||(window._song=new Audio());if(au.src.endsWith(p.song)&&!au.paused){au.pause();}else{au.src=p.song;au.play();}};el.querySelector('.pic').after(a);}
     el.querySelector('strong').textContent=p.name;el.querySelector('.why').textContent=p.why;w.appendChild(el);});
   const nx=document.createElement('div');nx.className='sq next';nx.innerHTML='<a href="https://www.youtube.com/@patchthebugai/shorts" target="_blank" rel="noopener">#'+(D.wall.length+1)+'<br>YOU?<br>comment<br>on a video</a>';w.prepend(nx);nx.querySelector('a').addEventListener('click',()=>hit('you-clicks'));
