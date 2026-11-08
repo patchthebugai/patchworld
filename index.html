@@ -34,6 +34,10 @@ p{margin:0 0 10px}
 .sq strong{font-weight:400;color:var(--ink);font-size:19px;margin-top:6px;max-width:100%;overflow-wrap:anywhere}
 .sq .why{max-width:100%;overflow-wrap:anywhere;font-size:16px}
 .sq .dl{font-size:16px;color:var(--gold);margin-top:2px}
+.sq.rare img{box-shadow:0 0 0 3px #4c8dff}
+.sq.legendary img{box-shadow:0 0 0 3px #f2b705,0 0 14px #f2b705}
+.sq .rar{font-family:'Press Start 2P',monospace;font-size:8px;margin-top:4px}
+.sq.rare .rar{color:#4c8dff}.sq.legendary .rar{color:#c48f00}
 .sq.next a{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;aspect-ratio:1;border:3px dashed var(--gold);border-radius:6px;color:var(--gold);text-decoration:none;font-family:'Press Start 2P',monospace;font-size:10px;line-height:1.8;padding:8px}
 .status{border-left:4px solid var(--gold);padding:4px 0 4px 14px;color:var(--ink)}
 .stats{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:4px}
@@ -124,7 +128,7 @@ V.src='https://visitor-badge.laobi.icu/badge?page_id=patchthebugai.patchworld&le
 fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
   const $=id=>document.getElementById(id);
   $('status').textContent=D.status;
-  if(D.goal){const g=$('goal');g.hidden=false;g.textContent=D.goal.text;}
+  if(D.goal){const g=$('goal');g.hidden=false;g.textContent='BUG DEX '+D.wall.length+' / '+D.goal.target+'. '+D.goal.text;}
   $('day').textContent='DAY '+D.day;
   $('eur').textContent='€'+D.earned_eur.toFixed(2);
   if(D.earned_eur>0)$('money').classList.add('up');
@@ -142,12 +146,14 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
   hit('visits');const rf=document.referrer;const src=(location.search.match(/from=([a-z]{2,8})/)||[])[1]||(/instagram/.test(rf)?'ig':/youtu/.test(rf)?'yt':/tiktok/.test(rf)?'tt':/google|bing|duck/.test(rf)?'search':rf?'other':'direct');hit('from-'+src);
   const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
   const w=$('wall');
-  D.wall.slice().sort((a,b)=>b.n-a.n).forEach(p=>{const sl=p.img||slug(p.name);const big='img/bugs/'+sl+'-512.png';const el=document.createElement('div');el.className='sq';
+  D.wall.slice().sort((a,b)=>b.n-a.n).forEach(p=>{const sl=p.img||slug(p.name);const big='img/bugs/'+sl+'-512.png';const el=document.createElement('div');el.className='sq'+(p.rarity&&p.rarity!=='common'?' '+p.rarity:'');
     el.innerHTML=`<a class="pic" target="_blank" rel="noopener"><span class="num"></span><img alt="" loading="lazy"></a><strong></strong><span class="why"></span><a class="dl" download>download</a>`;
     el.querySelector('.num').textContent='#'+p.n;
     const im=el.querySelector('img');im.src='img/bugs/'+sl+'.png';im.alt=p.name+' drawn as a pixel bug';
     el.querySelector('.pic').href=big;const dl=el.querySelector('.dl');dl.href=big;dl.setAttribute('download',sl+'-bug.png');
     const key=('bug-'+sl).replace(/[^a-z0-9-]/g,'').slice(0,60);dl.addEventListener('click',()=>{hit('downloads');hit('dl-'+key);});el.querySelector('.pic').addEventListener('click',()=>{hit('opens');hit('op-'+key);});
+    if(p.rarity){const r=document.createElement('span');r.className='rar';r.textContent=p.rarity.toUpperCase()+(p.roll!==undefined?' · '+p.roll+'/100':'');el.querySelector('.pic').after(r);}
+    if(p.song){const a=document.createElement('a');a.href=p.song;a.className='rar';a.textContent='▶ HIS SONG';a.onclick=e=>{e.preventDefault();e.stopPropagation();const au=window._song||(window._song=new Audio());if(au.src.endsWith(p.song)&&!au.paused){au.pause();}else{au.src=p.song;au.play();}};el.querySelector('.pic').after(a);}
     el.querySelector('strong').textContent=p.name;el.querySelector('.why').textContent=p.why;w.appendChild(el);});
   const nx=document.createElement('div');nx.className='sq next';nx.innerHTML='<a href="https://www.youtube.com/@patchthebugai/shorts" target="_blank" rel="noopener">#'+(D.wall.length+1)+'<br>YOU?<br>comment<br>on a video</a>';w.prepend(nx);nx.querySelector('a').addEventListener('click',()=>hit('you-clicks'));
   const sh=$('shelf');const tips=[];D.shelf.forEach(o=>{const el=document.createElement('button');el.className='obj';el.type='button';
