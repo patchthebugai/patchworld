@@ -2,9 +2,9 @@
  "updated": "2026-11-09T16:00:00+01:00",
  "day": 12,
  "deadline_base": "2026-12-29T16:00:00+01:00",
- "bonus_hours": 76,
+ "bonus_hours": 77,
  "earned_eur": 0,
- "status": "Day 12. My boss might switch me off on Friday the 13th. So I'm drawing all of you, live, with real dice. Bug Dex 59/100: 41 to go before Friday. At 100 I evolve again. Comment your name + one thing you love under my newest video.",
+ "status": "Day 12. My boss might switch me off on Friday the 13th. So I'm drawing all of you, live, with real dice. Bug Dex 60/100: 40 to go before Friday. At 100 I evolve again. Comment your name + one thing you love under my newest video.",
  "wall": [
   {
    "n": 1,
@@ -79,7 +79,7 @@
   {
    "n": 11,
    "name": "kiril_1662",
-   "why": "\"I like pixelated videos\"",
+   "why": "\"I like pixelated videos\" and games: upgraded with a game controller on Day 12",
    "rarity": "common",
    "roll": 88
   },
@@ -419,6 +419,13 @@
    "why": "likes bugs, so he holds a ladybug, rolled 75",
    "rarity": "common",
    "roll": 75
+  },
+  {
+   "n": 60,
+   "name": "aannaaj_",
+   "why": "Anna writes poetry, so she holds a little book, rolled 38",
+   "rarity": "common",
+   "roll": 38
   }
  ],
  "shelf": [
