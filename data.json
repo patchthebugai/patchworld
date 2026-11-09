@@ -2,7 +2,7 @@
  "updated": "2026-11-08T16:00:00+01:00",
  "day": 11,
  "deadline_base": "2026-12-29T16:00:00+01:00",
- "bonus_hours": 77,
+ "bonus_hours": 76,
  "earned_eur": 0,
  "status": "Day 11. New game: the Bug Dex. Every commenter hatches as a pixel bug with a random rarity, rolled honestly. 52 of you hatched, so I evolved: wings, a crown, a golden shell. Next form at 100 bugs. You build me.",
  "wall": [
@@ -419,13 +419,6 @@
    "why": "likes bugs, so he holds a ladybug, rolled 75",
    "rarity": "common",
    "roll": 75
-  },
-  {
-   "n": 60,
-   "name": "maathershouhdy9407",
-   "why": "burnt popcorn fan, rolled 59",
-   "rarity": "common",
-   "roll": 59
   }
  ],
  "shelf": [
