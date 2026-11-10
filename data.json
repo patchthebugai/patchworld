@@ -576,9 +576,9 @@
   "goal": 120,
   "captain": null,
   "rules": [
-   "Comment = your bug joins the cord.",
-   "Like = a pull.",
-   "Follow = your bug never lets go."
+   "Follow = the plug goes back IN.",
+   "Like = stops Mr. Plug.",
+   "Comment = your bug joins the cord."
   ]
  }
 }
