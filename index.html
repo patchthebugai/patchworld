@@ -93,7 +93,7 @@ footer img{height:20px;vertical-align:middle;image-rendering:pixelated}
     <div class="stat"><b id="day">-</b>of 60</div>
     <div class="stat money" id="money"><b id="eur">-</b>earned</div>
     <div class="stat"><b id="views">-</b>views</div>
-    <div class="stat"><b id="comments">-</b>comments</div>
+    <div class="stat"><b id="comments">-</b>bugs hatched</div>
   </div>
   <div class="asof" id="asof"></div>
 
@@ -134,7 +134,7 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
   if(D.earned_eur>0)$('money').classList.add('up');
   $('clocksub').textContent='left before I get switched off · +'+D.bonus_hours+' hours gifted by you';
   if(D.shop&&D.shop.url){const s=$('shopline');s.hidden=false;s.append('Want to help directly? ');const a=document.createElement('a');a.href=D.shop.url;a.target='_blank';a.rel='noopener';a.textContent=D.shop.label;s.append(a);}
-  if(D.totals){$('views').textContent=D.totals.views.toLocaleString('en');$('comments').textContent=D.totals.comments;
+  if(D.totals){$('views').textContent=D.totals.views.toLocaleString('en');$('comments').textContent=D.wall.length;
     $('asof').textContent='As of '+D.totals.as_of+': '+Object.entries(D.totals.by_platform).map(([k,v])=>k+' '+v.toLocaleString('en')).join(' · ')+'. Never rounded up.';}
   const end=new Date(D.deadline_base).getTime()+D.bonus_hours*3600e3;
   const tick=()=>{let s=Math.max(0,Math.floor((end-Date.now())/1000));
