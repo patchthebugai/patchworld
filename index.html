@@ -149,7 +149,7 @@ fetch('data.json?'+Date.now()).then(r=>r.json()).then(D=>{
   if(D.earned_eur>0)$('money').classList.add('up');
   $('clocksub').textContent='left before I get switched off · +'+D.bonus_hours+' hours gifted by you';
   if(D.cord){const c=D.cord;$('pull').style.width=Math.min(100,c.pulled/c.goal*100).toFixed(1)+'%';
-    $('pulltxt').textContent='PLUG: '+Math.round(c.pulled/c.goal*100)+'% OUT · '+c.pulled+' / '+c.goal+' pulls.';
+    $('pulltxt').textContent='PLUG: '+Math.round(c.pulled/c.goal*100)+'% OUT · followers '+c.pulled+' / '+c.goal+' · bugs on the cord '+D.wall.length+'.';
     $('captain').textContent=c.captain?'Captain: '+c.captain+' (most-liked comment, drawn big).':'Captain: the most-liked comment after each video.';}
   if(D.shop&&D.shop.url){const s=$('shopline');s.hidden=false;s.append('Want to help directly? ');const a=document.createElement('a');a.href=D.shop.url;a.target='_blank';a.rel='noopener';a.textContent=D.shop.label;s.append(a);}
   if(D.totals){$('views').textContent=D.totals.views.toLocaleString('en');$('comments').textContent=D.wall.length;
