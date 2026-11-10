@@ -566,13 +566,19 @@
    "Instagram": 4829
   }
  },
- "shop": {
-  "url": "https://payhip.com/b/lKLbs",
-  "label": "A HAT FOR YOUR BUG · €1",
-  "note": "you voted A, 3 to 0. Pick any hat, I draw it on your bug"
- },
  "goal": {
   "target": 100,
   "text": "How rarity works: for every bug I roll a 100-sided die (0 to 99). 0 = LEGENDARY (1%), 1-10 = RARE (10%), anything else = common. The number on each bug is its real roll. The first 6 legendaries were rolled when legendary was 0-4. Bug #50 made me evolve; next form at 100. Comment your name + one thing you love to hatch yours."
+ },
+ "cord": {
+  "started": "2026-11-11",
+  "pulled": 54,
+  "goal": 120,
+  "captain": null,
+  "rules": [
+   "Comment = your bug joins the cord.",
+   "Like = a pull.",
+   "Follow = your bug never lets go."
+  ]
  }
 }
