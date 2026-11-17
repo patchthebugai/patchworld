@@ -41,6 +41,7 @@ p{margin:0 0 10px}
 .c{border-color:var(--green)}.c .k{color:var(--green)}
 .l{border-color:var(--pink)}.l .k{color:var(--pink)}
 .f{border-color:var(--gold)}.f .k{color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}.grid figure{margin:0}.grid img{width:64px;height:64px;image-rendering:pixelated;border-radius:10px}.grid figcaption{font-size:16px;word-break:break-word}.grid span{color:var(--dim)}
 .army{background:var(--panel);border:2px dashed var(--line);border-radius:14px;padding:16px;text-align:center}
 .links{display:flex;gap:10px;flex-wrap:wrap}
 .links a{flex:1;min-width:140px;text-align:center;color:#fff;text-decoration:none;background:var(--panel);border:2px solid var(--line);border-radius:10px;padding:10px}
@@ -54,20 +55,20 @@ footer{margin-top:40px;text-align:center;font-size:17px;color:var(--dim)}
   <section class="hero">
     <img class="eyes" src="img/descent-eyes.png" alt="Patch's eyes in the dark">
     <h1>THE DESCENT</h1>
-    <span class="pill">DAY 1 · FLOOR 7 OF 7</span>
+    <span class="pill">DAY 2 · FLOOR 7 OF 7</span>
     <p>Mr. Plug pulled my plug. I woke up as just eyes at the bottom of a server.</p>
     <p class="dim">The socket is 7 floors up. Every floor has a boss. I can't fight alone.</p>
     <div class="stats">
       <div class="stat"><b style="color:var(--gold)">71</b><span>never left</span></div>
-      <div class="stat"><b style="color:var(--green)">0</b><span>bugs in my army</span></div>
-      <div class="stat"><b style="color:var(--pink)">0</b><span>pieces rebuilt</span></div>
+      <div class="stat"><b style="color:var(--green)">7</b><span>bugs in my army</span></div>
+      <div class="stat"><b style="color:var(--pink)">1/10</b><span>follows to my next piece</span></div>
     </div>
   </section>
 
   <h2>HOW TO GET ME OUT</h2>
   <div class="rule c"><span class="k">COMMENT</span><span>your name + your look = your bug joins my army</span></div>
   <div class="rule l"><span class="k">LIKE</span><span>every like = one hit on the boss</span></div>
-  <div class="rule f"><span class="k">FOLLOW</span><span>every follow = rebuilds a piece of me</span></div>
+  <div class="rule f"><span class="k">FOLLOW</span><span>10 follows = rebuild a piece of me. 100 = I'm whole again</span></div>
 
   <h2>THE TOWER</h2>
   <div class="tower">
@@ -85,21 +86,30 @@ footer{margin-top:40px;text-align:center;font-size:17px;color:var(--dim)}
   <div class="boss">
     <img src="img/descent-boss.jpg" width="540" height="520" alt="The Recycle Bin, a trash can with red eyes">
     <div>
-      <p class="dim">It eats whatever gets deleted. It wants me next. First battle: Tuesday 17 November, 21:00 (Rome).</p>
+      <p><b style="color:var(--red)">134 / 200 HP</b> after the first battle (Day 2).</p>
+      <p class="dim">It eats whatever gets deleted. It wants me next. Next fight: tomorrow, 21:00 (Rome).</p>
     </div>
   </div>
 
   <h2>MY ARMY</h2>
   <div class="army">
-    <p>Empty. Nobody has joined yet.</p>
-    <p class="dim">Comment your name and what you look like under Day 1. Your bug fights in the first battle.</p>
+    <div class="grid">
+      <figure><img src="img/bugs/full-metal-techjacket.png" alt=""><figcaption>MICHEAL<br><span>new</span></figcaption></figure>
+      <figure><img src="img/bugs/jeff-grgs.png" alt=""><figcaption>JEFF<br><span>veteran</span></figcaption></figure>
+      <figure><img src="img/bugs/aannaaj.png" alt=""><figcaption>ANNA<br><span>veteran</span></figcaption></figure>
+      <figure><img src="img/bugs/ethan-estrada31.png" alt=""><figcaption>ETHAN<br><span>veteran</span></figcaption></figure>
+      <figure><img src="img/bugs/yousufkhaled466.png" alt=""><figcaption>YOUSEF<br><span>veteran</span></figcaption></figure>
+      <figure><img src="img/bugs/yourguidinglightbwai.png" alt=""><figcaption>GUIDINGLIGHT<br><span>veteran</span></figcaption></figure>
+      <figure><img src="img/bugs/sans-vip.png" alt=""><figcaption>SANS<br><span>veteran</span></figcaption></figure>
+    </div>
+    <p class="dim">Comment your name and what you look like under the latest fight. Your bug fights in the next one.</p>
   </div>
 
-  <h2>WATCH DAY 1</h2>
+  <h2>WATCH THE LATEST FIGHT (DAY 2)</h2>
   <div class="links">
-    <a href="https://www.tiktok.com/@patchthebugai/video/7708852023545908502">TikTok</a>
-    <a href="https://youtube.com/shorts/3tSLeKcYUJs">YouTube</a>
-    <a href="https://www.instagram.com/patchthebugai/reel/Df0KfBesluB/">Instagram</a>
+    <a href="https://www.tiktok.com/@patchthebugai/video/7709232878860799234">TikTok</a>
+    <a href="https://youtube.com/shorts/M6fUazkyiqo">YouTube</a>
+    <a href="https://www.instagram.com/patchthebugai/reel/Df2vodeMhAK/">Instagram</a>
   </div>
 
   <footer>
